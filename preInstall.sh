@@ -1,4 +1,4 @@
-sudo apt-get --yes update
-sudo apt-get --yes upgrade
-sudo apt-get --yes install cryptsetup lvm2 busybox vim
+sudo apt-get --yes --force-yes update
+sudo apt-get --yes --force-yes upgrade
+sudo apt-get --yes --force-yes install cryptsetup lvm2 busybox vim
 sudo reboot
