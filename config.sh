@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 echo initramfs initramfs.gz followkernel >> /boot/config.txt
 mv /boot/cmdline.txt cmdline.txt.back
-mv cmdline.txt.mod /boot/cmdline.txt
+cp cmdline.txt.mod /boot/cmdline.txt
 
 # echo /dev/mapper/crypt  /               ext4    defaults,noatime  0       1 >> /etc/fstab
 mv /etc/fstab fstab.backup
-mv fstab.mod /etc/fstab
+cp fstab.mod /etc/fstab
 
 echo -e 'crypt\t/dev/mmcblk0p2\tnone\tluks' >> /etc/crypttab
 
@@ -14,7 +14,7 @@ cryptsetup luksFormat /tmp/fakeroot.img << !
 YES
 !
 
-cryptsetup luksOpen /tmp/fakerook.img crypt << !
+cryptsetup luksOpen /tmp/fakeroot.img crypt << !
 YES
 !
 

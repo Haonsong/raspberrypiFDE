@@ -1,4 +1,7 @@
-sudo apt-get --yes --force-yes update
-sudo apt-get --yes --force-yes upgrade
-sudo apt-get --yes --force-yes install cryptsetup lvm2 busybox vim
-sudo reboot
+#!/bin/bash
+chown -R root:root *.mod 
+chown -R root:root *.sh
+apt-get --yes install cryptsetup lvm2 busybox vim git
+# curl -L https://install.pivpn.io | bash
+# apt-get -y install ddclient
+# apt-get -y install dropbear

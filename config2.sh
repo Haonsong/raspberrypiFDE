@@ -1,5 +1,10 @@
+#!/bin/bash
+
 apt-get -y install dropbear
 ssh-keygen -t rsa -b 2048 -N '' -f id_rsa
+
+mkdir /etc/initramfs-tools/root
+mkdir /etc/initramfs-tools/root/.ssh
 
 # Add publickey to authorized_keys
 cat id_rsa.pub > /etc/dropbear-initramfs/authorized_keys
